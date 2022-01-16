@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -26,7 +27,7 @@ function App() {
         <h1 className="page-title">Spacetagram</h1>
       </div>
 
-      <div>
+      <div className="posts-container">
         {photos ? (
           <div className="photos">
             {photos.map((photo, index) => (
