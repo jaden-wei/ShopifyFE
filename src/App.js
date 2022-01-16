@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState(null);
 
   useEffect(() => {
     getData();
@@ -22,16 +22,23 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Shopify Front End Developer Internship Project</h1>
-      {photos && (
-        <div className="photos">
-          {photos.map((photo, index) => (
-            <div key={index}>
-              <img src={photo.img_src} alt="Photo" />
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="navbar">
+        <h1 className="page-title">Spacetagram</h1>
+      </div>
+
+      <div>
+        {photos ? (
+          <div className="photos">
+            {photos.map((photo, index) => (
+              <div key={index}>
+                <img src={photo.img_src} alt="Photo" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </div>
     </div>
   );
 }
