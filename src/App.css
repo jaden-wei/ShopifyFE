@@ -8,8 +8,22 @@
 
 .App {
   width: 100vw;
+}
 
-  background-color: rgb(248, 246, 239);
+#svg {
+  position: absolute;
+  top: 0;
+
+  z-index: -1;
+
+  height: 70vh !important;
+
+  background-image: linear-gradient(
+    to top,
+    #adc4f0 0%,
+    #2c65d0 20%,
+    #000000 100%
+  );
 }
 
 .posts-container {
@@ -17,5 +31,5 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
