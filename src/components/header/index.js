@@ -4,7 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 function Header() {
   return (
-    <div className="header">
+    <div className="header" data-aos="fade-in">
       <div></div>
       <h1 className="title">Spacetagram</h1>
       <h4 className="subtitle">Developed by Jaden Wei</h4>

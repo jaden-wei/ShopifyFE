@@ -8,7 +8,12 @@ function Post({ index, photo }) {
   const [liked, setLiked] = useState(false);
 
   return (
-    <div key={index} className="img-container" enlarged={enlarged}>
+    <div
+      key={index}
+      className="img-container"
+      enlarged={enlarged}
+      data-aos="fade-up"
+    >
       <div
         className="blur"
         onClick={() => {

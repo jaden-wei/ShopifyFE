@@ -34,8 +34,33 @@
   grid-gap: 20px;
 }
 
+.photos-loaded {
+  width: 100%;
+  height: 100%;
+}
+
+.not-loaded {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: linear-gradient(
+    to top,
+    #3b77e8 0%,
+    #2c65d0 20%,
+    #000000 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .loading-container {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+.loading-icon {
+  transform: scale(1.5);
 }
