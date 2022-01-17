@@ -1,0 +1,17 @@
+.header {
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .title {
+  height: 6rem;
+  font-size: 6rem;
+}
+
+.header .subtitle {
+  height: 2rem;
+  font-size: 2rem;
+}

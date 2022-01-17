@@ -1,0 +1,36 @@
+.img-container {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  text-align: center;
+  max-height: 350px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.img-container img:hover {
+  transform: scale(1.25);
+}
+
+.img-label {
+  font-size: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 280px;
+  z-index: 100;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.img-container img:hover ~ .img-label {
+  opacity: 1;
+}

@@ -1,45 +1,43 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { useEffect, useState } from "react";
 import "./App.css";
+import Header from "./components/header";
+import Post from "./components/Post";
 
 function App() {
   const [photos, setPhotos] = useState(null);
+
+  const displayPost = (photo) => {};
 
   useEffect(() => {
     getData();
 
     async function getData() {
       const response = await fetch(
-        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY"
+        "https://api.nasa.gov/planetary/apod?api_key=zFb9JRrtQmpRKW169NqZcsntRXYwNjrkcZDis3KH&count=25"
       );
       const data = await response.json();
 
+      console.log(data);
+
       // store the data into our books variable
-      setPhotos(data.photos);
+      setPhotos(data);
     }
   }, []);
 
-  console.log(photos);
-
   return (
     <div className="App">
-      <div className="navbar">
-        <h1 className="page-title">Spacetagram</h1>
-      </div>
+      <Header />
 
-      <div className="posts-container">
-        {photos ? (
-          <div className="photos">
-            {photos.map((photo, index) => (
-              <div key={index}>
-                <img src={photo.img_src} alt="Photo" />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <h1>Loading...</h1>
-        )}
-      </div>
+      {photos ? (
+        <div className="posts-container">
+          {photos.map((photo, index) => (
+            <Post index={index} photo={photo} />
+          ))}
+        </div>
+      ) : (
+        <h1>Loading...</h1>
+      )}
     </div>
   );
 }
