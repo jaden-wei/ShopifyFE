@@ -6,8 +6,11 @@ import Post from "./components/Post";
 
 function App() {
   const [photos, setPhotos] = useState(null);
+  const [blur, setBlur] = useState(false);
 
-  const displayPost = (photo) => {};
+  const toggleBlur = () => {
+    setBlur(!blur);
+  };
 
   useEffect(() => {
     getData();
@@ -32,7 +35,7 @@ function App() {
       {photos ? (
         <div className="posts-container">
           {photos.map((photo, index) => (
-            <Post index={index} photo={photo} />
+            <Post index={index} photo={photo} toggleBlur={toggleBlur} />
           ))}
         </div>
       ) : (
