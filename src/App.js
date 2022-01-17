@@ -4,6 +4,8 @@ import "./App.css";
 import Header from "./components/header";
 import Post from "./components/Post";
 
+import ReactLoading from "react-loading";
+
 function App() {
   const [photos, setPhotos] = useState(null);
   const [blur, setBlur] = useState(false);
@@ -49,7 +51,9 @@ function App() {
           ))}
         </div>
       ) : (
-        <h1>Loading...</h1>
+        <div className="loading-container">
+          <ReactLoading type={"bubbles"} color="rgb(226, 226, 226)" />
+        </div>
       )}
     </div>
   );
