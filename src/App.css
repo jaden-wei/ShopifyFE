@@ -6,8 +6,13 @@
   font-family: "Dongle", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .App {
   width: 100vw;
+  overflow-x: hidden;
 }
 
 #svg {
@@ -16,12 +21,14 @@
 
   z-index: -1;
 
-  height: 70vh !important;
+  height: 70vh;
+
+  mask-repeat: none;
 
   background-image: linear-gradient(
     to top,
     #adc4f0 0%,
-    #2c65d0 20%,
+    #2c65d0 30%,
     #000000 100%
   );
 }
@@ -58,7 +65,22 @@
 .loading-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+
+.loading-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading-header {
+  color: rgb(226, 226, 226);
+  font-size: 6rem;
+  height: 6rem;
+  font-weight: 300;
 }
 
 .loading-icon {

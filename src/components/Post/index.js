@@ -1,26 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import "./styles.css";
 
-function Post({ index, photo }) {
+function Post({ index, photo, searched, setDateInput }) {
   const [enlarged, setEnlarged] = useState(0);
   const [liked, setLiked] = useState(false);
 
+  useEffect(() => {
+    if (searched) {
+      setEnlarged(1);
+    }
+  }, []);
+
   return (
-    <div
-      key={index}
-      className="img-container"
-      enlarged={enlarged}
-      data-aos="fade-up"
-    >
+    <div key={index} className="img-container" enlarged={enlarged}>
       <div
         className="blur"
         onClick={() => {
           setEnlarged((enlarged + 1) % 2);
+          setDateInput("");
         }}
         enlarged={enlarged}
       ></div>
+
       <div className="post-container" enlarged={enlarged}>
         <img
           className={"photo"}
@@ -29,6 +32,7 @@ function Post({ index, photo }) {
           onError={(e) => (e.target.parentElement.style.display = "none")}
           onClick={() => {
             setEnlarged((enlarged + 1) % 2);
+            setDateInput("");
           }}
           enlarged={enlarged}
         />
