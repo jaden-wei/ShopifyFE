@@ -39,9 +39,9 @@ function Post({ index, photo, searched, setDateInput }) {
         <div className="img-info" enlarged={enlarged}>
           <div className="post-description-header">
             {photo.copyright ? (
-              <h4>{photo.title + " - " + photo.copyright}</h4>
+              <a href={photo.url}>{photo.title + " - " + photo.copyright}</a>
             ) : (
-              <h4>{photo.title}</h4>
+              <a href={photo.url}>{photo.title}</a>
             )}
             {liked ? (
               <AiFillHeart
