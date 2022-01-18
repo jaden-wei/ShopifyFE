@@ -7,11 +7,17 @@ function Post({ index, photo, searched, setDateInput }) {
   const [enlarged, setEnlarged] = useState(0);
   const [liked, setLiked] = useState(false);
 
+  console.log(photo);
+
   useEffect(() => {
     if (searched) {
       setEnlarged(1);
     }
   }, []);
+
+  if (photo.media_type !== "image") {
+    return <></>;
+  }
 
   return (
     <div key={index} className="img-container" enlarged={enlarged}>

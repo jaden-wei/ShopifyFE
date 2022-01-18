@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     const getRandomData = async () => {
       const response = await fetch(
-        "https://api.nasa.gov/planetary/apod?api_key=zFb9JRrtQmpRKW169NqZcsntRXYwNjrkcZDis3KH&count=20"
+        "https://api.nasa.gov/planetary/apod?api_key=zFb9JRrtQmpRKW169NqZcsntRXYwNjrkcZDis3KH&count=60"
       );
       const data = await response.json();
 
@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="App">
       {photos ? (
-        <div c lassName="photos-loaded">
+        <div className="photos-loaded">
           <svg
             id="svg"
             xmlns="http://www.w3.org/2000/svg"

@@ -87,3 +87,10 @@ body {
 .loading-icon {
   transform: scale(1.5);
 }
+
+@media (max-device-width: 768px) {
+  .posts-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
